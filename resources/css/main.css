@@ -3,3 +3,157 @@
     padding: 0;
     display: border-box;
 }
+
+:root {
+    --pal-contrast-dark: #3F0D12;
+    --pal-contrast-light: #A71D31;
+    --pal-light: #F1F0CC;
+    --pal-mid: #D5BF86;
+    --pal-dark: #8D775F;
+}
+
+html {
+    font-size: 18px;    
+}
+
+body {
+    background-color: var(--pal-light);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header & Title */
+header {
+    background-image: url("../images/rob-laughter-WW1jsInXgwM-unsplash.jpg");
+    background-position: bottom;
+    background-size: cover;
+    height: 22rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 15rem;
+    font-family: 'Puppies Play', serif;
+    color: #fff;
+    text-shadow: 2px 2px 4px var(--pal-dark);
+}
+
+/* Navigation Bar */
+.main-nav {
+    height: 3rem;
+    background-color: var(--pal-dark);
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    list-style: none;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--pal-light);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4em;
+}
+
+.main-nav a:hover {
+    color: var(--pal-contrast-dark);
+    transition: .2s linear;
+}
+
+/* Hamburger */
+.hambutton {
+    position: fixed;
+    z-index: 100;
+    top: 0.4rem;
+    right: 0.4rem;
+    padding: 4px;
+    border: var(--pal-contrast-dark) solid 2px;
+    background: var(--pal-light);
+    cursor: pointer;
+}
+
+.closeIcon {
+    display: none;
+}
+
+.hamburger-menu {
+    position: fixed;
+    transform: translateY(-100%);
+    transition: transform 0.2s;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    background: var(--pal-dark);
+    color: var(--pal-light);
+    list-style: none;
+    padding-top: 4rem;
+}
+
+.showMenu {
+    transform: translateY(0);
+  }
+
+.menuItem {
+    display: block;
+    margin: 2rem 4rem;
+    font-size: 1.8rem;
+    color: var(--palette-mid);
+    text-decoration: none;
+}
+
+.menu-item:active {
+    background-color: var(--pal-light);
+}
+
+.svg {
+    filter: invert(51%) sepia(7%) saturate(1635%) hue-rotate(351deg) brightness(92%) contrast(81%);
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    grid-gap: 20px;
+}
+
+/* Breakpoints */
+@media only screen and (max-width: 760px) {
+    h1 {
+        font-size: 10rem;
+    }
+}
+
+@media only screen and (min-width: 501px) {
+    .hamburger {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    h1 {
+        font-size: 6rem;
+    }
+
+    .main-nav a {
+        display: none;
+    }
+
+    .main-nav {
+        height: 1rem;
+    }
+
+    header {
+        height: 10rem;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
